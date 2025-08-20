@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <unistd.h>
 
 int main() {
     int total_char = 0, total_linhas = 0, total_palavras = 0;
 
     FILE* fp;
-    fp = fopen("entrada.txt", "r");
+    char cwd[1024];
+    getcwd(cwd, sizeof(cwd));
+    printf("Diretório atual: %s\n", cwd);
+    fp = fopen("../entrada.txt", "r");
 
     if (fp == NULL) {
-        printf("Erro ao abrir arquivo texto");
+        printf("Erro ao abrir arquivo texto\n");
         exit(1);
     }
 
