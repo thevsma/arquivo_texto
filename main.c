@@ -13,7 +13,7 @@ int main() {
         exit(1);
     }
 
-    char ch;
+    int ch;
     int in_word = 0;
     while ((ch = fgetc(fp)) != EOF) {
         total_char++;
@@ -32,5 +32,6 @@ int main() {
 
     printf("total de char: %d\ntotal de linhas: %d\ntotal de palavras: %d\n", total_char, total_linhas, total_palavras);
 
+    fclose(fp);
     return 0;
 }
